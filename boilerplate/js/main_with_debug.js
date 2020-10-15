@@ -51,8 +51,7 @@ function addColumns(cityPop){
     $('tr').each(function(i){
 
     	if (i == 0){
-
-    		$(this).apend('<th>City Size</th>');
+    		$(this).append('<th>City Size</th>');
     	} else {
 
     		var citySize;
@@ -61,35 +60,35 @@ function addColumns(cityPop){
     			citySize = 'Small';
 
     		} else if (cityPop[i-1].population < 500000){
-    			citysize = 'Medium';
+    			citySize = 'Medium';
 
     		} else {
     			citySize = 'Large';
     		};
 
-    		$this.append('<td' + citySize + '</td>');
+    		$(this).append('<td>' + citySize + '</td>');
     	};
     });
 };
 
 function addEvents(){
 
-	$('#table').mouseover(function(){
-		
+	$('table').mouseover(function(){
+
 		var color = "rgb(";
 
 		for (var i=0; i<3; i++){
 
 			var random = Math.round(Math.random() * 255);
 
-			color += "random";
+			color += random;
 
 			if (i<2){
 				color += ",";
 			
 			} else {
 				color += ")";
-			};
+		   	};
 
 			$(this).css('color', color);
 		};
